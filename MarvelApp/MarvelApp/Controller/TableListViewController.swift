@@ -19,6 +19,9 @@ class TableListViewController : UIViewController {
         listTableView.register(ListTableViewCell.nib(), forCellReuseIdentifier: ListTableViewCell.identifier)
         
         print(list.ekrem)
+        Service.shared.getCharacterList { response in
+            print(response.data.results.first)
+        }
     }
 }
 

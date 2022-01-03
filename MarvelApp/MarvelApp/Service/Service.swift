@@ -8,10 +8,36 @@
 import Foundation
 
 
-class Service {
+final class Service {
     
-    static func fetchData() {
+    static let shared = Service()
+    
+    enum ServiceError : Error {
+        case failedToGetData
+    }
+    
+    enum HTTPMethod: String {
+        case GET
+        case POST
+    }
+    
+    func getCharacterList(completion : @escaping (CharacterModel) -> Void) {
+        guard let url = URL(string: Constants.baseUrl + "characters?ts=" + Constants.timeStamp + "&apikey=" + Constants.apiKey + "&hash=" + Constants.hash) else {return}
         
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data, error == nil else {
+                print("errorrrr fetching data")
+                return
+            }
+            
+            do {
+//                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                let result =  try JSONDecoder().decode(CharacterModel.self, from: data)
+                completion(result)
+            } catch  {
+                print("errror")
+            }
+        }.resume()
     }
     
     

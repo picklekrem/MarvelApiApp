@@ -22,6 +22,7 @@
 		EAB487F027832E5A005E1125 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB487EE27832E5A005E1125 /* ListTableViewCell.xib */; };
 		EAB487F327833062005E1125 /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB487F127833062005E1125 /* GridCollectionViewCell.swift */; };
 		EAB487F427833062005E1125 /* GridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB487F227833062005E1125 /* GridCollectionViewCell.xib */; };
+		EAB487F7278340A2005E1125 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB487F6278340A2005E1125 /* CharacterModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		EAB487EE27832E5A005E1125 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		EAB487F127833062005E1125 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
 		EAB487F227833062005E1125 /* GridCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridCollectionViewCell.xib; sourceTree = "<group>"; };
+		EAB487F6278340A2005E1125 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +66,6 @@
 				DE1A87AF23EDF542AB026852 /* Pods-MarvelApp.debug.xcconfig */,
 				15F2264EB1D7ABFBD7FEFABC /* Pods-MarvelApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -97,9 +98,10 @@
 		EAB487CA27832383005E1125 /* MarvelApp */ = {
 			isa = PBXGroup;
 			children = (
+				EAB487DF278323AE005E1125 /* Service */,
+				EAB487F527834089005E1125 /* Models */,
 				EAB487E127832457005E1125 /* Cells */,
 				EAB487E0278323B4005E1125 /* Controller */,
-				EAB487DF278323AE005E1125 /* Service */,
 				EAB487E22783246E005E1125 /* Others */,
 				EAB487D127832383005E1125 /* Main.storyboard */,
 				EAB487D627832387005E1125 /* LaunchScreen.storyboard */,
@@ -146,6 +148,14 @@
 				EAB487CD27832383005E1125 /* SceneDelegate.swift */,
 			);
 			path = Others;
+			sourceTree = "<group>";
+		};
+		EAB487F527834089005E1125 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EAB487F6278340A2005E1125 /* CharacterModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAB487E827832AF5005E1125 /* GridListViewController.swift in Sources */,
+				EAB487F7278340A2005E1125 /* CharacterModel.swift in Sources */,
 				EAB487EF27832E5A005E1125 /* ListTableViewCell.swift in Sources */,
 				EAB487CC27832383005E1125 /* AppDelegate.swift in Sources */,
 				EAB487F327833062005E1125 /* GridCollectionViewCell.swift in Sources */,

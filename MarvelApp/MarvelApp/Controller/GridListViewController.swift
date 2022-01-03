@@ -20,7 +20,6 @@ class GridListViewController : UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(list.ekrem)
         gridCollectionView.register(GridCollectionViewCell.nib(), forCellWithReuseIdentifier: GridCollectionViewCell.identifier)
     }
 }
