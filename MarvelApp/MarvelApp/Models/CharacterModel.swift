@@ -18,14 +18,21 @@ struct Datas : Decodable {
 struct Results : Decodable {
     let id : Int?
     let name : String?
-    let series : Series?
+    let series : Count?
+    let comics : Count?
+    let stories : Count?
+    let events : Count?
     var thumbnail : [String:String]
     var urls : [[String:String]]
 }
 
-struct Series : Decodable {
-    
+struct Count : Decodable {
     let available : Int?
+    let items : [ItemNames]
+}
+
+struct ItemNames : Decodable {
+    let name : String?
 }
 
 

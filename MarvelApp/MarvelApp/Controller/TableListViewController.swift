@@ -81,9 +81,15 @@ extension TableListViewController : UITableViewDelegate, UITableViewDataSource {
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = DetailViewController()
+//        let vc = DetailViewController()
+//
+//        navigationController?.pushViewController(vc, animated: true)
         
-        navigationController?.pushViewController(vc, animated: true)
+        Service.shared.getCharacterDetails(id: filteredData[indexPath.row].id!) { response in
+            DispatchQueue.main.async {
+                print(response.data.results)
+            }
+        }
     }
 }
 
