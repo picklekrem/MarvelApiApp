@@ -8,10 +8,10 @@
 import Foundation
 
 struct CharacterModel : Decodable {
-    let data : Data
+    let data : Datas
 }
 
-struct Data : Decodable {
+struct Datas : Decodable {
     let results : [Results]
 }
 
@@ -19,6 +19,8 @@ struct Results : Decodable {
     let id : Int?
     let name : String?
     let series : Series?
+    var thumbnail : [String:String]
+    var urls : [[String:String]]
 }
 
 struct Series : Decodable {

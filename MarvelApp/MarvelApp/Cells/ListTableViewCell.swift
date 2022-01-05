@@ -14,9 +14,21 @@ class ListTableViewCell: UITableViewCell {
         return UINib(nibName: "ListTableViewCell", bundle: nil)
     }
     
+    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var seriesCountLabel: UILabel!
+    @IBOutlet weak var charImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        backView.cardView()
+        charImageView.roundedImage()
+    }
+    
+    func configure(data : Results) {
+        nameLabel.text = data.name
+        seriesCountLabel.text = "Series : \(data.series?.available ?? 0)"
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

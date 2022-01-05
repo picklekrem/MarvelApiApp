@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9C0FEA3C328FA03A6DA64811 /* Pods_MarvelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C25F1E25DBF14C29F2CB7FC0 /* Pods_MarvelApp.framework */; };
+		EA162D1727864CD900450FE1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA162D1627864CD900450FE1 /* DetailViewController.swift */; };
+		EA1D68DA278486E10055BAEE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1D68D9278486E10055BAEE /* Extensions.swift */; };
 		EAB487CC27832383005E1125 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB487CB27832383005E1125 /* AppDelegate.swift */; };
 		EAB487CE27832383005E1125 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB487CD27832383005E1125 /* SceneDelegate.swift */; };
 		EAB487D327832383005E1125 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB487D127832383005E1125 /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 		15F2264EB1D7ABFBD7FEFABC /* Pods-MarvelApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelApp.release.xcconfig"; path = "Target Support Files/Pods-MarvelApp/Pods-MarvelApp.release.xcconfig"; sourceTree = "<group>"; };
 		C25F1E25DBF14C29F2CB7FC0 /* Pods_MarvelApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1A87AF23EDF542AB026852 /* Pods-MarvelApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelApp.debug.xcconfig"; path = "Target Support Files/Pods-MarvelApp/Pods-MarvelApp.debug.xcconfig"; sourceTree = "<group>"; };
+		EA162D1627864CD900450FE1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		EA1D68D9278486E10055BAEE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EAB487C827832383005E1125 /* MarvelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB487CB27832383005E1125 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAB487CD27832383005E1125 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 				EAB487D127832383005E1125 /* Main.storyboard */,
 				EAB487D627832387005E1125 /* LaunchScreen.storyboard */,
 				EAB487D927832387005E1125 /* Info.plist */,
+				EA1D68D9278486E10055BAEE /* Extensions.swift */,
 			);
 			path = MarvelApp;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 				EAB487E3278324CA005E1125 /* ListViewController.swift */,
 				EAB487E527832ABD005E1125 /* TableListViewController.swift */,
 				EAB487E727832AF5005E1125 /* GridListViewController.swift */,
+				EA162D1627864CD900450FE1 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -278,12 +284,14 @@
 				EAB487E827832AF5005E1125 /* GridListViewController.swift in Sources */,
 				EAB487F7278340A2005E1125 /* CharacterModel.swift in Sources */,
 				EAB487EF27832E5A005E1125 /* ListTableViewCell.swift in Sources */,
+				EA162D1727864CD900450FE1 /* DetailViewController.swift in Sources */,
 				EAB487CC27832383005E1125 /* AppDelegate.swift in Sources */,
 				EAB487F327833062005E1125 /* GridCollectionViewCell.swift in Sources */,
 				EAB487E4278324CA005E1125 /* ListViewController.swift in Sources */,
 				EAB487CE27832383005E1125 /* SceneDelegate.swift in Sources */,
 				EAB487EC27832C0F005E1125 /* Constants.swift in Sources */,
 				EAB487E627832ABD005E1125 /* TableListViewController.swift in Sources */,
+				EA1D68DA278486E10055BAEE /* Extensions.swift in Sources */,
 				EAB487EA27832B2E005E1125 /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

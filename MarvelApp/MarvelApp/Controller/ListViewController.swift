@@ -13,33 +13,32 @@ class ListViewController: UIViewController {
     @IBOutlet weak var listContainerView: UIView!
     @IBOutlet weak var gridContainerView: UIView!
     
-    var ekrem = [1,2,2,3,3,3,2,2,231,23,12,312,3,12,31,23,12,31,2]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        // network call yapıyorum
-        //bunu bir tane değişkene atıyorum
     }
     
-   
     @IBAction func segmentedSwitched(_ sender: Any) {
         switch (segmentedController.selectedSegmentIndex) {
         case 0:
-            listContainerView.isHidden = false
-            gridContainerView.isHidden = true
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: [], animations: {
+                self.listContainerView.alpha = 1.0
+                self.gridContainerView.alpha = 0.0
+            }, completion: { (finished: Bool) in
+                self.listContainerView.isHidden = false
+                self.gridContainerView.isHidden = true
+            })
+
         case 1:
-            listContainerView.isHidden = true
-            gridContainerView.isHidden = false
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: [], animations: {
+                self.listContainerView.alpha = 0.0
+                self.gridContainerView.alpha = 1.0
+            }, completion: { (finished: Bool) in
+                self.listContainerView.isHidden = true
+                self.gridContainerView.isHidden = false
+            })
         default:
             break
         }
-        print("switched")
     }
     
 }
-
-
-
-

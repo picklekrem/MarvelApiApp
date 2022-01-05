@@ -13,10 +13,20 @@ class GridCollectionViewCell: UICollectionViewCell {
     static func nib() -> UINib {
         return UINib(nibName: "GridCollectionViewCell", bundle: nil)
     }
+    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var charImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var seriesCountLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        backView.cardView()
+    }
+    
+    func configure(data : Results) {
+        nameLabel.text = data.name
+        seriesCountLabel.text = "Series : \(data.series?.available ?? 0)"
+        
     }
 
 }
