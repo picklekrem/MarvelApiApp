@@ -15,6 +15,7 @@ class GridListViewController : UIViewController {
     
     var characterList : [Results] = []
     var filteredData : [Results] = []
+    var selectedChar : Results?
     var timer = Timer()
     var offSet = 0
     
@@ -44,6 +45,14 @@ class GridListViewController : UIViewController {
         let path = data["path"] ?? ""
         let ext = data["extension"] ?? ""
         return URL(string: "\(path).\(ext)")!
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailVC" {
+            if let detailVc = segue.destination as? DetailViewController {
+                detailVc.result = selectedChar
+            }
+        }
     }
 }
 
@@ -85,6 +94,14 @@ extension GridListViewController : UICollectionViewDelegate, UICollectionViewDat
         return CGSize(width: size, height: size)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        Service.shared.getCharacterDetails(id: filteredData[indexPath.row].id!) { response in
+            DispatchQueue.main.async {
+                self.selectedChar = response.data.results.first
+                self.performSegue(withIdentifier: "toDetailVC", sender: nil)
+            }
+        }
+    }
 }
 
 extension GridListViewController : UISearchBarDelegate {

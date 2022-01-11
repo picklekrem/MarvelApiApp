@@ -42,7 +42,12 @@
                                     <constraint firstAttribute="width" constant="67" id="ka1-Zc-mYd"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="fav"/>
+                                <buttonConfiguration key="configuration" style="plain" image="star" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="favButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="UDw-PX-aVS"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="D9a-jH-sEw">
                                 <rect key="frame" x="100" y="10" width="197" height="25"/>
@@ -82,6 +87,7 @@
             <connections>
                 <outlet property="backView" destination="ywG-eN-oWG" id="aMA-Wh-qC4"/>
                 <outlet property="charImageView" destination="sOl-dx-MwX" id="PFI-DY-ygf"/>
+                <outlet property="favButton" destination="mN6-7m-yxE" id="QQH-MM-ya7"/>
                 <outlet property="nameLabel" destination="D9a-jH-sEw" id="Xsf-1l-UR3"/>
                 <outlet property="seriesCountLabel" destination="5z4-jj-qpm" id="oVZ-dP-gxG"/>
             </connections>
@@ -89,6 +95,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

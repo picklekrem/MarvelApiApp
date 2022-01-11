@@ -16,9 +16,11 @@ class TableListViewController : UIViewController {
     
     var characterList : [Results] = []
     var filteredData : [Results] = []
+    var selectedChar : Results?
     var timer = Timer()
     var offSet = 0
     
+    var doneBtnArra = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +50,14 @@ class TableListViewController : UIViewController {
         let path = data["path"] ?? ""
         let ext = data["extension"] ?? ""
         return URL(string: "\(path).\(ext)")!
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailVC" {
+            if let detailVc = segue.destination as? DetailViewController {
+                detailVc.result = selectedChar
+            }
+        }
     }
 }
 
@@ -80,16 +90,26 @@ extension TableListViewController : UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let vc = DetailViewController()
-//
-//        navigationController?.pushViewController(vc, animated: true)
+        let cell = listTableView.cellForRow(at: indexPath) as! ListTableViewCell
+        let image = UIImage(systemName: "star.fill")
+        cell.favButton.setImage(image, for: .normal)
+        cell.favCheck = true
         
         Service.shared.getCharacterDetails(id: filteredData[indexPath.row].id!) { response in
             DispatchQueue.main.async {
-                print(response.data.results)
+                self.selectedChar = response.data.results.first
+                self.performSegue(withIdentifier: "toDetailVC", sender: nil)
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = listTableView.cellForRow(at: indexPath) as! ListTableViewCell
+        let image = UIImage(systemName: "star")
+        cell.favButton.setImage(image, for: .normal)
+        cell.favCheck = false
     }
 }
 

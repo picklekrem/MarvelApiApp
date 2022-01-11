@@ -102,6 +102,7 @@
 		EAB487CA27832383005E1125 /* MarvelApp */ = {
 			isa = PBXGroup;
 			children = (
+				EA1D68D9278486E10055BAEE /* Extensions.swift */,
 				EAB487DF278323AE005E1125 /* Service */,
 				EAB487F527834089005E1125 /* Models */,
 				EAB487E127832457005E1125 /* Cells */,
@@ -110,7 +111,6 @@
 				EAB487D127832383005E1125 /* Main.storyboard */,
 				EAB487D627832387005E1125 /* LaunchScreen.storyboard */,
 				EAB487D927832387005E1125 /* Info.plist */,
-				EA1D68D9278486E10055BAEE /* Extensions.swift */,
 			);
 			path = MarvelApp;
 			sourceTree = "<group>";

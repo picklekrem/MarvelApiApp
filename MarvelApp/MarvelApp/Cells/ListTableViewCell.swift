@@ -18,6 +18,9 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var seriesCountLabel: UILabel!
     @IBOutlet weak var charImageView: UIImageView!
+    @IBOutlet weak var favButton: UIButton!
+    
+    var favCheck : Bool = true
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,6 +38,10 @@ class ListTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    @IBAction func favButtonClicked(_ sender: Any) {
+
+        
     }
     
 }
